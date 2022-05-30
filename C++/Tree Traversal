@@ -1,0 +1,29 @@
+struct NODE{
+    int data;
+    NODE* left;
+    NODE* right;
+};
+
+void Preorder(NODE* root){
+    if (root == NULL) return;
+
+    printf("%d ", root->data);
+    Preorder(root->left);
+    Preorder(root->right);
+}
+
+void Inorder(NODE* root){
+    if (root == NULL) return;
+
+    Inorder(root->left);
+    printf("%d ", root->data);
+    Inorder(root->right);
+}
+
+void Postorder(NODE* root){
+    if (root == NULL) return;
+
+    Postorder(root->left);
+    Postorder(root->right);
+    printf("%d ", root->data);
+}
